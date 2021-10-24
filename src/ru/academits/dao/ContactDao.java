@@ -32,8 +32,8 @@ public class ContactDao {
         contactList.add(contact);
     }
 
-    public boolean deleteContact(Contact contact) {
-        return contactList.remove(contact);
+    public void deleteContact(int id) {
+        contactList.removeIf(contact -> contact.getId() == id);
     }
 
     public boolean deleteContacts(List<Contact> contacts) {

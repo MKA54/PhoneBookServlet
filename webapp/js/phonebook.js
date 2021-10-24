@@ -69,13 +69,13 @@ new Vue({
             self.validation = false;
         },
 
-        deleteContact: function (contact) {
+        deleteContact: function (id) {
             var self = this;
 
             $.ajax({
                 type: "POST",
                 url: "/phonebook/deleteContact",
-                data: JSON.stringify(contact)
+                data: JSON.stringify(id)
             }).always(function () {
                 self.loadData();
             });

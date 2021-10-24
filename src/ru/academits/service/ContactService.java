@@ -56,8 +56,8 @@ public class ContactService {
         return contactValidation;
     }
 
-    public boolean deleteContact(Contact contact) {
-        return contactDao.deleteContact(contact);
+    public void deleteContact(int id) {
+        contactDao.deleteContact(id);
     }
 
     public boolean deleteContacts(List<Contact> contacts) {
