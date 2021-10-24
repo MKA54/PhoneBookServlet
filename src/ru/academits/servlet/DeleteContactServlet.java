@@ -17,9 +17,13 @@ public class DeleteContactServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String contactJson = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+        System.out.println(contactJson);
+
         Contact contact = contactConverter.convertFormJson(contactJson);
 
         boolean isRemove = phoneBookService.deleteContact(contact);
+
+        System.out.println(isRemove);
 
         if (!isRemove) {
             resp.setStatus(500);
