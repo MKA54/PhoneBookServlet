@@ -60,8 +60,8 @@ public class ContactService {
         contactDao.deleteContact(id);
     }
 
-    public boolean deleteContacts(List<Contact> contacts) {
-        return contactDao.deleteContacts(contacts);
+    public void deleteContacts(int[] indexList) {
+        contactDao.deleteContacts(indexList);
     }
 
     public List<Contact> getAllContacts() {

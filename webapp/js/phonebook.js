@@ -86,7 +86,7 @@ new Vue({
 
             for (var i = 0; i < this.rows.length; i++) {
                 if (this.rows[i].checked === true) {
-                    selectedContacts.push(this.rows[i])
+                    selectedContacts.push(this.rows[i].id)
                 }
             }
 
