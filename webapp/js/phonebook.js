@@ -70,6 +70,8 @@ new Vue({
         },
 
         deleteContact: function (contact) {
+            var self = this;
+
             $.ajax({
                 type: "POST",
                 url: "/phonebook/deleteContact",
