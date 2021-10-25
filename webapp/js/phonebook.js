@@ -114,12 +114,13 @@ new Vue({
             });
         },
 
-        resetFilter: function (){
+        resetFilter: function () {
             var self = this;
 
             $.ajax({
                 type: "POST",
-                url: "/phonebook/resetFilter"
+                url: "/phonebook/resetFilter",
+                data: ""
             }).always(function () {
                 self.loadData();
             });
