@@ -64,6 +64,10 @@ public class ContactService {
         contactDao.filter(text);
     }
 
+    public void resetFilter(){
+        contactDao.resetFilter();
+    }
+
     public List<Contact> getAllContacts() {
         return contactDao.getAllContacts();
     }

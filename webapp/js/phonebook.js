@@ -114,6 +114,17 @@ new Vue({
             });
         },
 
+        resetFilter: function (){
+            var self = this;
+
+            $.ajax({
+                type: "POST",
+                url: "/phonebook/resetFilter"
+            }).always(function () {
+                self.loadData();
+            });
+        },
+
         loadData: function () {
             var self = this;
 

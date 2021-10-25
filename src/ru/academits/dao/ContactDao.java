@@ -50,4 +50,10 @@ public class ContactDao {
             contact.setShown(false);
         }
     }
+
+    public void resetFilter() {
+        for (Contact contact : contactList) {
+            contact.setShown(true);
+        }
+    }
 }

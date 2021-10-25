@@ -30,6 +30,11 @@
         <servlet-class>ru.academits.servlet.FilterContactServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ResetFilterServlet</servlet-name>
+        <servlet-class>ru.academits.servlet.ResetFilterServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>getAllContactsServlet</servlet-name>
         <url-pattern>/phonebook/get/all</url-pattern>
@@ -49,5 +54,9 @@
     <servlet-mapping>
         <servlet-name>FilterContactServlet</servlet-name>
         <url-pattern>/phonebook/filter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResetFilterServlet</servlet-name>
+        <url-pattern>/phonebook/resetFilter</url-pattern>
     </servlet-mapping>
 </web-app>
