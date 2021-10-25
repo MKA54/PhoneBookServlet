@@ -17,6 +17,12 @@ public class DeleteContactServlet extends HttpServlet {
 
         int id = Integer.parseInt(contactJson);
 
+        int initialSize = phoneBookService.size();
+
         phoneBookService.deleteContact(id);
+
+        if (phoneBookService.size() == initialSize) {
+            resp.setStatus(500);
+        }
     }
 }

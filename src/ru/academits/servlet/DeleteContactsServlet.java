@@ -22,6 +22,16 @@ public class DeleteContactsServlet extends HttpServlet {
                 .mapToInt(Integer::parseInt)
                 .toArray();
 
-        phoneBookService.deleteContacts(indexList);
+        int initialSize = phoneBookService.size();
+
+        for (int i : indexList) {
+            phoneBookService.deleteContact(i);
+        }
+
+        int currentSize = phoneBookService.size();
+
+        if (currentSize != initialSize - indexList.length) {
+            resp.setStatus(500);
+        }
     }
 }

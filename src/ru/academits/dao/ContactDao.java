@@ -36,9 +36,7 @@ public class ContactDao {
         contactList.removeIf(contact -> contact.getId() == id);
     }
 
-    public void deleteContacts(int[] indexList) {
-        for (int j : indexList) {
-            contactList.removeIf(contact -> contact.getId() == j);
-        }
+    public int size() {
+        return contactList.size();
     }
 }
