@@ -42,10 +42,12 @@ public class ContactDao {
     }
 
     public void filter(String text) {
-        for (Contact contact: contactList){
-            if (!(contact.getFirstName().equals(text)) || !(contact.getLastName().equals(text)) || !(contact.getPhone().equals(text))){
-                contact.setShown(false);
+        for (Contact contact : contactList) {
+            if (text.equals(contact.getLastName()) || text.equals(contact.getFirstName()) || text.equals(contact.getPhone())) {
+                continue;
             }
+
+            contact.setShown(false);
         }
     }
 }
