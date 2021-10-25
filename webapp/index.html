@@ -21,9 +21,9 @@
     <div class="filter-container">
         <label class="mr-1">
             Введите текст:
-            <input type="text" class="form-control input-sm"/>
+            <input type="text" v-model.trim="text" class="form-control input-sm"/>
         </label>
-        <button class="btn btn-primary">Отфильтровать</button>
+        <button class="btn btn-primary" v-on:click="filter">Отфильтровать</button>
         <button class="btn btn-primary">Сбросить фильтр</button>
     </div>
 

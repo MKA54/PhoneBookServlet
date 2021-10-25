@@ -60,11 +60,15 @@ public class ContactService {
         contactDao.deleteContact(id);
     }
 
+    public void filter(String text) {
+        contactDao.filter(text);
+    }
+
     public List<Contact> getAllContacts() {
         return contactDao.getAllContacts();
     }
 
-    public int size(){
+    public int size() {
         return contactDao.size();
     }
 }

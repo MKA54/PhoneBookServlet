@@ -8,6 +8,11 @@ public class Contact {
     private String lastName;
     private String phone;
     private boolean important;
+    private boolean shown;
+
+    public void setShown(boolean shown) {
+        this.shown = shown;
+    }
 
     public int getId() {
         return id;

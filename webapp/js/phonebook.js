@@ -15,7 +15,8 @@ new Vue({
         lastName: "",
         phone: "",
         rows: [],
-        serverError: ""
+        serverError: "",
+        text: ""
     },
     methods: {
         contactToString: function (contact) {
@@ -34,7 +35,7 @@ new Vue({
                     lastName: contact.lastName,
                     phone: contact.phone,
                     checked: false,
-                    shown: true,
+                    shown: contact.shown,
                     number: i + 1
                 };
             });
@@ -96,6 +97,18 @@ new Vue({
                 type: "POST",
                 url: "/phonebook/deleteContacts",
                 data: JSON.stringify(selectedContacts)
+            }).always(function () {
+                self.loadData();
+            });
+        },
+
+        filter: function () {
+            var self = this;
+
+            $.ajax({
+                type: "POST",
+                url: "/phonebook/filter",
+                data: JSON.stringify(self.text)
             }).always(function () {
                 self.loadData();
             });

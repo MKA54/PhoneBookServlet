@@ -16,6 +16,7 @@ public class ContactDao {
         contact.setFirstName("Иван");
         contact.setLastName("Иванов");
         contact.setPhone("9123456789");
+        contact.setShown(true);
         contactList.add(contact);
     }
 
@@ -38,5 +39,13 @@ public class ContactDao {
 
     public int size() {
         return contactList.size();
+    }
+
+    public void filter(String text) {
+        for (Contact contact: contactList){
+            if (!(contact.getFirstName().equals(text)) || !(contact.getLastName().equals(text)) || !(contact.getPhone().equals(text))){
+                contact.setShown(false);
+            }
+        }
     }
 }
