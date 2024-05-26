@@ -69,7 +69,6 @@ new Vue({
             self.phone = "";
             self.validation = false;
         },
-
         deleteContact: function (id) {
             var self = this;
 
@@ -81,7 +80,6 @@ new Vue({
                 self.loadData();
             });
         },
-
         deleteContacts: function () {
             var selectedContacts = [];
 
@@ -101,7 +99,6 @@ new Vue({
                 self.loadData();
             });
         },
-
         filter: function () {
             var self = this;
 
@@ -113,7 +110,6 @@ new Vue({
                 self.loadData();
             });
         },
-
         resetFilter: function () {
             var self = this;
 
@@ -125,7 +121,6 @@ new Vue({
                 self.loadData();
             });
         },
-
         loadData: function () {
             var self = this;
 
